@@ -14,8 +14,11 @@ export default {
 @use "src/assets/styles/_index.sass"
 
 .side-menu
+  //background-color: index.$lightpurple
   color: white
-  height: 100px
-  width: 100px
-  border: white solid 2px
+  //index.$black
+  height: 100%
+  width: 150px
+  border: white solid 1px
+
 </style>

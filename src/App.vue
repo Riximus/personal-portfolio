@@ -1,5 +1,5 @@
 <template>
-  <SideMenu/>
+  <SideMenu style="order: 0"/>
   <div class="outer-views">
     <AboutView/>
   </div>
