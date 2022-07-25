@@ -1,26 +1,33 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <SideMenu/>
+  <div class="outer-views">
+    <AboutView/>
+  </div>
+
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import SideMenu from "@/components/SideMenu";
+import AboutView from "@/components/AboutView";
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    SideMenu,
+    AboutView
   }
 }
 </script>
 
 <style lang="sass">
+@use "assets/styles/_index.sass"
+
 #app
-  font-family: Avenir, Helvetica, Arial, sans-serif
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
-  text-align: center
-  color: blue
-  margin-top: 60px
-
+  background-color: index.$black
+  height: 100vh
+  display: flex
+  align-items: center
+  justify-content: center
 </style>
