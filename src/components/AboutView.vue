@@ -41,25 +41,18 @@ export default {
   color: index.$lightgreen
 
 #profile-image-frame
-  position: relative
-  width: 50%
+  @include index.responsive-square
+  @include index.center-middle
   border: white solid 1px
   align-self: center
-  display: flex
-  align-items: center
-  justify-content: center
+
 
 #profile-image-frame:after
-  content: ""
-  display: block
-  padding-bottom: 100%
+  @include index.responsive-square-after
 
 // v maybe change div to img v
 #profile-image
-  // v for responsive v
-  position: absolute
-  width: 100%
-  height: 100%
+  @include index.responsive-square-content
   border-radius: 50%
 
 .icons

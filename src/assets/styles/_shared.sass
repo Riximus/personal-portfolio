@@ -1,9 +1,8 @@
 @use "colors"
+@use "mixins"
 
 .outer-views
-  display: flex
-  align-items: center
-  justify-content: center
+  @include mixins.center-middle
   width: 100%
   height: 100%
 
