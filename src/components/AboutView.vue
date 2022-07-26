@@ -9,28 +9,48 @@
       <div class="content">
         <h3>coding languages</h3>
         <div class="icons" style="margin-bottom: 90px">
-          <div class="icon-frame"></div>
-          <div class="icon-frame"></div>
-          <div class="icon-frame"></div>
-          <div class="icon-frame"></div>
+          <Icon
+              v-for="icon in langIcons"
+              :key="icon.id"
+              :fileName="icon.fileName"
+              :altText="icon.altText"/>
         </div>
         <h3>tools</h3>
         <div class="icons">
-          <div class="icon-frame"></div>
-          <div class="icon-frame"></div>
-          <div class="icon-frame"></div>
+          <Icon
+              v-for="icon in toolIcons"
+              :key="icon.id"
+              :fileName="icon.fileName"
+              :altText="icon.altText"/>
         </div>
       </div>
       <div id="profile-image-frame">
         <img id="profile-image" src="../assets/images/profilpic.jpg"/>
       </div>
     </div>
+    <p style="align-self: flex-end">hello</p>
   </div>
 </template>
 
 <script>
+import Icon from "@/components/Icon";
+
 export default {
-  name: "AboutView"
+  name: "AboutView",
+  components: {Icon},
+  data: function () {
+    return {
+      langIcons: [
+        {id: 1, fileName: 'c_sharp', altText: 'C Sharp Icon'},
+        {id: 2, fileName: 'java', altText: 'Java Icon'},
+        {id: 3, fileName: 'python', altText: 'Python Icon'},
+      ],
+      toolIcons: [
+        {id: 1, fileName: 'c_sharp', altText: 'C Sharp Icon'},
+      ]
+    };
+  },
+
 }
 </script>
 
@@ -58,12 +78,17 @@ export default {
 .icons
   margin-top: 25px
   display: flex
+  gap: 10px 25px
 
-.icon-frame
+.icons > div
+  @include index.center-middle
   background-color: index.$lightgreen
   width: 90px
   height: 90px
-  margin-right: 25px
   border-radius: 50%
+
+.icons > div > img
+  width: 80%
+  height: 80%
 
 </style>
