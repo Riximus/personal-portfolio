@@ -8,11 +8,10 @@
 @mixin responsive-square
   position: relative
   width: 50%
-
-@mixin responsive-square-after
-  content: ""
-  display: block
-  padding-bottom: 100%
+  &:after
+    content: ""
+    display: block
+    padding-bottom: 100%
 
 @mixin responsive-square-content
   position: absolute

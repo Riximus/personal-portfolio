@@ -1,12 +1,15 @@
 <template>
   <div id="about-view" class="inner-views">
+    <div class="contact">
+      <h3>contact me</h3>
+    </div>
     <div class="title-head">
       <h4>i'm</h4>
       <h1>ricardo baptista</h1>
       <h4>a <span class="underline">developer</span> with a curiosity that grows everyday like my houseplants</h4>
     </div>
-    <div class="content-body">
-      <div class="content">
+    <div class="content">
+      <div class="content-body">
         <h3>coding languages</h3>
         <div class="icons" style="margin-bottom: 90px">
           <Icon
@@ -24,11 +27,17 @@
               :altText="icon.altText"/>
         </div>
       </div>
-      <div id="profile-image-frame">
-        <img id="profile-image" src="../assets/images/profilpic.jpg"/>
+      <div id="profile-frame">
+        <img id="profile-frame-image" src="../assets/images/profilepic.jpg"/>
       </div>
     </div>
-    <p style="align-self: flex-end">hello</p>
+    <div class="socials">
+      <Icon
+          v-for="icon in socialIcons"
+          :key="icon.id"
+          :fileName="icon.fileName"
+          :altText="icon.altText"/>
+    </div>
   </div>
 </template>
 
@@ -46,11 +55,15 @@ export default {
         {id: 3, fileName: 'python', altText: 'Python Icon'},
       ],
       toolIcons: [
-        {id: 1, fileName: 'c_sharp', altText: 'C Sharp Icon'},
+        {id: 1, fileName: 'gitkraken', altText: 'Gitkraken Logo'},
+        {id: 2, fileName: 'jetbrains', altText: 'JetBrains Logo'}
+      ],
+      socialIcons: [
+        {id: 1, fileName: 'twitter', altText: 'Twitter Logo'},
+        {id: 2, fileName: 'github', altText: 'Github Logo'}
       ]
     };
   },
-
 }
 </script>
 
@@ -60,35 +73,21 @@ export default {
 #about-view
   color: index.$lightgreen
 
-#profile-image-frame
-  @include index.responsive-square
-  @include index.center-middle
-  border: white solid 1px
-  align-self: center
-
-
-#profile-image-frame:after
-  @include index.responsive-square-after
-
-// v maybe change div to img v
-#profile-image
-  @include index.responsive-square-content
-  border-radius: 50%
-
 .icons
-  margin-top: 25px
   display: flex
+  //border: navajowhite solid 1px
+  height: index.$big-icon
+  margin-top: 25px
   gap: 10px 25px
 
-.icons > div
+#profile-frame
+  @include index.responsive-square
   @include index.center-middle
-  background-color: index.$lightgreen
-  width: 90px
-  height: 90px
-  border-radius: 50%
+  //border: white solid 1px
+  align-self: center
 
-.icons > div > img
-  width: 80%
-  height: 80%
+  &-image
+    @include index.responsive-square-content
+    border-radius: 50%
 
 </style>

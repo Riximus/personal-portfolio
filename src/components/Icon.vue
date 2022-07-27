@@ -24,8 +24,8 @@ export default {
 div
   @include index.center-middle
   background-color: index.$lightgreen
-  width: 90px
-  height: 90px
+  aspect-ratio: 1 / 1
+  height: 100%
   border-radius: 50%
 
 div > img
