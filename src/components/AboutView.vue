@@ -1,13 +1,16 @@
 <template>
   <div id="about-view" class="inner-views">
-    <div class="contact">
-      <h3>contact me</h3>
-    </div>
+    <!-- Contact Button -->
+    <ContactButton/>
+
+    <!-- Title -->
     <div class="title-head">
       <h4>i'm</h4>
       <h1>ricardo baptista</h1>
       <h4>a <span class="underline">developer</span> with a curiosity that grows everyday like my houseplants</h4>
     </div>
+
+    <!-- Main Body -->
     <div class="content">
       <div class="content-body">
         <h3>coding languages</h3>
@@ -28,25 +31,27 @@
         </div>
       </div>
       <div id="profile-frame">
-        <img id="profile-frame-image" src="../assets/images/profilepic.jpg"/>
+        <img id="profile-frame-image" src="../assets/images/profilepic.jpg" alt="Profile picture of a man"/>
       </div>
     </div>
-    <div class="socials">
-      <Icon
-          v-for="icon in socialIcons"
-          :key="icon.id"
-          :fileName="icon.fileName"
-          :altText="icon.altText"/>
-    </div>
+
+    <!-- Socials -->
+    <Socials/>
   </div>
 </template>
 
 <script>
 import Icon from "@/components/Icon";
+import Socials from "@/components/Socials";
+import ContactButton from "@/components/ContactButton";
 
 export default {
   name: "AboutView",
-  components: {Icon},
+  components: {
+    ContactButton,
+    Icon,
+    Socials
+  },
   data: function () {
     return {
       langIcons: [
@@ -57,13 +62,9 @@ export default {
       toolIcons: [
         {id: 1, fileName: 'gitkraken', altText: 'Gitkraken Logo'},
         {id: 2, fileName: 'jetbrains', altText: 'JetBrains Logo'}
-      ],
-      socialIcons: [
-        {id: 1, fileName: 'twitter', altText: 'Twitter Logo'},
-        {id: 2, fileName: 'github', altText: 'Github Logo'}
       ]
     };
-  },
+  }
 }
 </script>
 
@@ -89,5 +90,4 @@ export default {
   &-image
     @include index.responsive-square-content
     border-radius: 50%
-
 </style>
