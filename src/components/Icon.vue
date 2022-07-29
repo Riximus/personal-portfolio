@@ -1,5 +1,5 @@
 <template>
-  <div><img :src="getImgUrl(fileName)" :alt="`${altText}`"></div>
+  <div :class=className><img :src="getImgUrl(fileName)" :alt="`${altText}`"></div>
 </template>
 
 <script>
@@ -8,7 +8,8 @@ export default {
   name: 'Icon',
   props: {
     fileName: String,
-    altText: String
+    altText: String,
+    className: String
   },
   methods: {
     getImgUrl: function (imagePath) {
@@ -27,6 +28,9 @@ div
   aspect-ratio: 1 / 1
   height: 100%
   border-radius: 50%
+
+  &.project
+    background-color: index.$lightpurple
 
 div > img
   width: 80%

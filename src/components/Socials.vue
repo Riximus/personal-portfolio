@@ -1,10 +1,12 @@
 <template>
   <div class="socials">
     <Icon
+        :class-name="className"
         v-for="icon in socialIcons"
         :key="icon.id"
         :fileName="icon.fileName"
-        :altText="icon.altText"/>
+        :altText="icon.altText"
+    />
   </div>
 </template>
 
@@ -16,6 +18,9 @@ export default {
   name: "Socials",
   components: {
     Icon
+  },
+  props: {
+    className: String
   },
   data: function () {
     return {

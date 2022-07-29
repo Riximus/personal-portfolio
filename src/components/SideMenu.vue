@@ -1,5 +1,5 @@
 <template>
-  <div class="side-menu">
+  <div :class="`side-menu ${className}`">
     <h2>{{ menuText }}</h2>
   </div>
 </template>
@@ -8,7 +8,11 @@
 export default {
   name: "SideMenu",
   props: {
-    menuText: String
+    menuText: String,
+    className: {
+      type: String,
+      default: "about"
+    }
   }
 }
 </script>
@@ -25,6 +29,12 @@ export default {
   writing-mode: vertical-rl
   transform: rotate(-180deg)
   cursor: pointer
+
+  &.about
+    background-color: index.$lightpurple
+
+  &.project
+    background-color: index.$lightgreen
 
   // Removing Texthighlight
   /* iOS Safari */

@@ -1,7 +1,7 @@
 <template>
   <div id="about-view" class="inner-views">
     <!-- Contact Button -->
-    <ContactButton/>
+    <ContactButton class-name="about"/>
 
     <!-- Title -->
     <div class="title-head">

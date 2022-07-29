@@ -1,7 +1,7 @@
 <template>
   <div id="project-view" class="inner-views">
     <!-- Contact Button -->
-    <ContactButton/>
+    <ContactButton class-name="project"/>
 
     <!-- Title -->
     <div class="title-head">
@@ -21,7 +21,7 @@
     </div>
 
     <!-- Socials -->
-    <Socials/>
+    <Socials class-name="project"/>
   </div>
 </template>
 

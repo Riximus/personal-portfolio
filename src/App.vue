@@ -1,11 +1,10 @@
 <template>
-  <SideMenu style="order: 0" menu-text="about me" @click="toggle"/>
+  <SideMenu style="order: 0" :class-name="sideMenuClass" :menu-text=menuText v-on:click="toggle"/>
   <div class="outer-views">
     <KeepAlive>
       <component :is="component"/>
     </KeepAlive>
   </div>
-
 </template>
 
 <script>
@@ -14,6 +13,7 @@ import AboutView from "@/components/AboutView";
 import ProjectView from "@/components/ProjectView";
 
 export default {
+
   name: 'App',
   components: {
     SideMenu,
@@ -22,15 +22,21 @@ export default {
   },
   data() {
     return {
-      component: 'about-view'
+      component: 'about-view',
+      menuText: 'projects',
+      sideMenuClass: 'about-view'
     }
   },
   methods: {
     toggle() {
       if (this.component === 'about-view') {
         this.component = 'project-view'
+        this.menuText = 'about me'
+        this.sideMenuClass = 'project'
       } else {
         this.component = 'about-view'
+        this.menuText = 'projects'
+        this.sideMenuClass = 'about'
       }
     }
   }
