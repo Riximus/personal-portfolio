@@ -1,10 +1,11 @@
 <template>
-  <SideMenu style="order: 0" :class-name="sideMenuClass" :menu-text=menuText v-on:click="toggle"/>
+  <SideMenu :style="`order: ${sideMenuPosition}`" :class-name="sideMenuClass" :menu-text=menuText v-on:click="toggle"/>
   <div class="outer-views">
     <KeepAlive>
       <component :is="component"/>
     </KeepAlive>
   </div>
+  <!--<div class="testing" style="background-color: white; width: 200px; height: 200px"></div>-->
 </template>
 
 <script>
@@ -24,7 +25,8 @@ export default {
     return {
       component: 'about-view',
       menuText: 'projects',
-      sideMenuClass: 'about-view'
+      sideMenuClass: 'about-view',
+      sideMenuPosition: '0'
     }
   },
   methods: {
@@ -33,10 +35,12 @@ export default {
         this.component = 'project-view'
         this.menuText = 'about me'
         this.sideMenuClass = 'project'
+        this.sideMenuPosition = '1'
       } else {
         this.component = 'about-view'
         this.menuText = 'projects'
         this.sideMenuClass = 'about'
+        this.sideMenuPosition = '0'
       }
     }
   }
