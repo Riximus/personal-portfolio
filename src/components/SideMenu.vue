@@ -24,7 +24,7 @@ export default {
   @include index.center-middle
   background-color: index.$lightpurple
   color: index.$black
-  height: 100%
+  height: 100vh
   width: 150px
   writing-mode: vertical-rl
   transform: rotate(-180deg)
@@ -49,4 +49,5 @@ export default {
   -ms-user-select: none
   /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
   user-select: none
+
 </style>

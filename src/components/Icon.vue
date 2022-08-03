@@ -1,5 +1,6 @@
 <template>
-  <div :class=className><img :src="getImgUrl(fileName)" :alt="`${altText}`"></div>
+  <div id="icon-image" :class=className><img :src="getImgUrl(fileName)" :alt="`${altText}`"></div>
+  <h3 v-if=hide></h3>
 </template>
 
 <script>
@@ -9,7 +10,12 @@ export default {
   props: {
     fileName: String,
     altText: String,
-    className: String
+    className: String,
+    // for text under the icon
+    hide: {
+      type: Boolean,
+      default: false
+    }
   },
   methods: {
     getImgUrl: function (imagePath) {
@@ -22,7 +28,7 @@ export default {
 <style scoped lang="sass">
 @use "src/assets/styles/_index.sass"
 
-div
+#icon-image
   @include index.center-middle
   background-color: index.$lightgreen
   aspect-ratio: 1 / 1
@@ -32,7 +38,7 @@ div
   &.project
     background-color: index.$lightpurple
 
-div > img
+#icon-image > img
   width: 80%
   height: 80%
 </style>

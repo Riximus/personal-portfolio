@@ -1,9 +1,9 @@
 <template>
-  <SideMenu :style="`order: ${sideMenuPosition}`" :class-name="sideMenuClass" :menu-text=menuText v-on:click="toggle"/>
+  <Transition name="bar">
+    <SideMenu :class-name="sideMenuClass" :menu-text=menuText @click="toggle"/>
+  </Transition>
   <div class="outer-views">
-    <KeepAlive>
-      <component :is="component"/>
-    </KeepAlive>
+    <component :is="component"/>
   </div>
   <!--<div class="testing" style="background-color: white; width: 200px; height: 200px"></div>-->
 </template>
@@ -26,7 +26,9 @@ export default {
       component: 'about-view',
       menuText: 'projects',
       sideMenuClass: 'about-view',
-      sideMenuPosition: '0'
+      sideMenuPosition: '0',
+      transitionSideMenu: true,
+
     }
   },
   methods: {
@@ -35,12 +37,14 @@ export default {
         this.component = 'project-view'
         this.menuText = 'about me'
         this.sideMenuClass = 'project'
-        this.sideMenuPosition = '1'
+        //this.sideMenuPosition = '1'
+        this.transitionSideMenu = true
       } else {
         this.component = 'about-view'
         this.menuText = 'projects'
         this.sideMenuClass = 'about'
-        this.sideMenuPosition = '0'
+        //this.sideMenuPosition = '0'
+        this.transitionSideMenu = false
       }
     }
   }
@@ -50,6 +54,8 @@ export default {
 <style lang="sass">
 @use "assets/styles/_index.sass"
 
+//:style="`order: ${sideMenuPosition}`"
+
 #app
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
@@ -58,4 +64,6 @@ export default {
   display: flex
   align-items: center
   justify-content: center
+
+
 </style>
