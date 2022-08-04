@@ -1,6 +1,6 @@
 <template>
   <div id="icon-box">
-    <a :href=url>
+    <a :href=url target="_blank">
       <div id="icon-image" :class=className><img :src="getImgUrl(fileName)" :alt="`${altText}`"></div>
     </a>
     <p class="description" v-if="description">{{ description }}</p>
@@ -49,9 +49,18 @@ export default {
   aspect-ratio: 1 / 1
   height: 100%
   border-radius: 50%
+  transition: 300ms ease-out
+
+  &:hover
+    background: index.$green
+    transform: scale(1.2, 1.2)
 
   &.project
     background-color: index.$lightpurple
+
+    &:hover
+      background: index.$purple
+      transform: scale(1.2, 1.2)
 
 #icon-image > img
   width: 80%
