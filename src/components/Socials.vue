@@ -6,7 +6,7 @@
         :key="icon.id"
         :fileName="icon.fileName"
         :altText="icon.altText"
-    />
+        :url="icon.url"/>
   </div>
 </template>
 
@@ -25,8 +25,8 @@ export default {
   data: function () {
     return {
       socialIcons: [
-        {id: 1, fileName: 'twitter', altText: 'Twitter Logo'},
-        {id: 2, fileName: 'github', altText: 'Github Logo'}
+        {id: 1, fileName: 'twitter', altText: 'Twitter Logo', url: 'https://twitter.com/RixiPixel'},
+        {id: 2, fileName: 'github', altText: 'Github Logo', url: 'https://github.com/Riximus'}
       ]
     }
   }

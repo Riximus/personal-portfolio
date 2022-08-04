@@ -1,6 +1,10 @@
 <template>
-  <div id="icon-image" :class=className><img :src="getImgUrl(fileName)" :alt="`${altText}`"></div>
-  <h3 v-if=hide></h3>
+  <div id="icon-box">
+    <a :href=url>
+      <div id="icon-image" :class=className><img :src="getImgUrl(fileName)" :alt="`${altText}`"></div>
+    </a>
+    <p class="description" v-if="description">{{ description }}</p>
+  </div>
 </template>
 
 <script>
@@ -15,6 +19,14 @@ export default {
     hide: {
       type: Boolean,
       default: false
+    },
+    url: {
+      type: String,
+      default: ''
+    },
+    description: {
+      type: String,
+      default: ''
     }
   },
   methods: {
@@ -27,6 +39,9 @@ export default {
 
 <style scoped lang="sass">
 @use "src/assets/styles/_index.sass"
+
+#icon-box
+  height: 100%
 
 #icon-image
   @include index.center-middle
@@ -41,4 +56,8 @@ export default {
 #icon-image > img
   width: 80%
   height: 80%
+
+.description
+  margin-top: 0.5em
+  text-align: center
 </style>

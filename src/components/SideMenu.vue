@@ -1,6 +1,8 @@
 <template>
   <div :class="`side-menu ${className}`">
-    <h2>{{ menuText }}</h2>
+    <Transition appear>
+      <h2>{{ menuText }}</h2>
+    </Transition>
   </div>
 </template>
 
@@ -23,11 +25,8 @@ export default {
 .side-menu
   @include index.center-middle
   background-color: index.$lightpurple
-  color: index.$black
   height: 100vh
-  width: 150px
-  writing-mode: vertical-rl
-  transform: rotate(-180deg)
+  width: 10em
   cursor: pointer
 
   &.about
@@ -49,5 +48,17 @@ export default {
   -ms-user-select: none
   /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
   user-select: none
+
+h2
+  writing-mode: vertical-rl
+  transform: rotate(-180deg)
+  color: index.$black
+
+.v-enter-active, .v-leave-active
+  transition: opacity .5s ease-in-out
+  transition-delay: 0.4s
+
+.v-enter-from, .v-leave-to
+  opacity: 0
 
 </style>

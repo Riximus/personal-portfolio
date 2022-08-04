@@ -6,7 +6,7 @@
     <!-- Title -->
     <div class="title-head">
       <h4>i'm</h4>
-      <h1>ricardo baptista</h1>
+      <h1>vorname nachname</h1>
       <h4>a <span class="underline">developer</span> with a curiosity that grows everyday like my houseplants</h4>
     </div>
 
@@ -16,18 +16,24 @@
         <h3>coding languages</h3>
         <div class="icons" style="margin-bottom: 90px">
           <Icon
+              class="disable-href"
               v-for="icon in langIcons"
               :key="icon.id"
               :fileName="icon.fileName"
-              :altText="icon.altText"/>
+              :altText="icon.altText"
+              :description="icon.description"
+          />
         </div>
         <h3>tools</h3>
         <div class="icons">
           <Icon
+              class="disable-href"
               v-for="icon in toolIcons"
               :key="icon.id"
               :fileName="icon.fileName"
-              :altText="icon.altText"/>
+              :altText="icon.altText"
+              :description="icon.description"
+          />
         </div>
       </div>
       <div id="profile-frame">
@@ -55,13 +61,13 @@ export default {
   data: function () {
     return {
       langIcons: [
-        {id: 1, fileName: 'c_sharp', altText: 'C Sharp Icon'},
-        {id: 2, fileName: 'java', altText: 'Java Icon'},
-        {id: 3, fileName: 'python', altText: 'Python Icon'},
+        {id: 1, fileName: 'c_sharp', altText: 'C Sharp Icon', description: 'C#'},
+        {id: 2, fileName: 'java', altText: 'Java Icon', description: 'Java'},
+        {id: 3, fileName: 'python', altText: 'Python Icon', description: 'Python'},
       ],
       toolIcons: [
-        {id: 1, fileName: 'gitkraken', altText: 'Gitkraken Logo'},
-        {id: 2, fileName: 'jetbrains', altText: 'JetBrains Logo'}
+        {id: 1, fileName: 'gitkraken', altText: 'GitKraken Logo', description: 'GitKraken'},
+        {id: 2, fileName: 'jetbrains', altText: 'JetBrains Logo', description: 'JetBrains'},
       ]
     };
   }
