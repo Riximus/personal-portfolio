@@ -64,10 +64,12 @@ export default {
         {id: 1, fileName: 'c_sharp', altText: 'C Sharp Icon', description: 'C#'},
         {id: 2, fileName: 'java', altText: 'Java Icon', description: 'Java'},
         {id: 3, fileName: 'python', altText: 'Python Icon', description: 'Python'},
+        {id: 4, fileName: 'c', altText: 'C Icon', description: 'C'},
       ],
       toolIcons: [
         {id: 1, fileName: 'gitkraken', altText: 'GitKraken Logo', description: 'GitKraken'},
         {id: 2, fileName: 'jetbrains', altText: 'JetBrains Logo', description: 'JetBrains'},
+        {id: 3, fileName: 'notion', altText: 'Notion Logo', description: 'Notion'},
       ]
     };
   }

@@ -100,7 +100,7 @@ export default {
 
 @keyframes grow-in
   0%
-    transform: scaleX(0)
+    transform: scaleX(-1)
     transform-origin: 0 100%
 
   100%

@@ -3,7 +3,7 @@
     <a :href=url target="_blank">
       <div id="icon-image" :class=className><img :src="getImgUrl(fileName)" :alt="`${altText}`"></div>
     </a>
-    <p class="description" v-if="description">{{ description }}</p>
+    <p class="description">{{ description }}</p>
   </div>
 </template>
 
