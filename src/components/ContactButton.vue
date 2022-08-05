@@ -1,8 +1,10 @@
 <template>
-  <h3 :class="`contact ${className}`">contact me</h3>
+  <h3 :class="`contact ${className}`" @click="showForm = true">contact me</h3>
 </template>
 
 <script>
+
+
 export default {
   name: 'ContactButton',
   props: {
@@ -15,6 +17,7 @@ export default {
 @use "src/assets/styles/_index.sass"
 
 .contact
+  @include index.remove-highlight
   text-align: center
   width: 6em
   align-self: flex-end

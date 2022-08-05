@@ -90,6 +90,7 @@ export default {
   gap: 10px 25px
 
 #profile-frame
+  @include index.remove-highlight
   @include index.responsive-square
   @include index.center-middle
   //border: white solid 1px

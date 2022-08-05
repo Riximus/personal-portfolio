@@ -41,6 +41,7 @@ export default {
 @use "src/assets/styles/_index.sass"
 
 #icon-box
+  @include index.remove-highlight
   height: 100%
 
 #icon-image

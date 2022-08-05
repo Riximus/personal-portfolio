@@ -10,7 +10,6 @@
       <component :is="component"/>
     </Transition>
   </div>
-  <!--<div class="testing" style="background-color: white; width: 200px; height: 200px"></div>-->
 </template>
 
 <script>
@@ -42,13 +41,11 @@ export default {
         this.component = 'project-view'
         this.menuText = 'about me'
         this.sideMenuClass = 'project'
-        //this.sideMenuPosition = '1'
         this.transitionSideMenu = true
       } else {
         this.component = 'about-view'
         this.menuText = 'projects'
         this.sideMenuClass = 'about'
-        //this.sideMenuPosition = '0'
         this.transitionSideMenu = false
       }
     }
@@ -58,8 +55,6 @@ export default {
 
 <style lang="sass">
 @use "assets/styles/_index.sass"
-
-//:style="`order: ${sideMenuPosition}`"
 
 #app
   -webkit-font-smoothing: antialiased

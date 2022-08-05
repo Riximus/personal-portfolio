@@ -23,6 +23,7 @@ export default {
 @use "src/assets/styles/_index.sass"
 
 .side-menu
+  @include index.remove-highlight
   @include index.center-middle
   background-color: index.$lightpurple
   height: 100vh
@@ -35,19 +36,6 @@ export default {
   &.project
     background-color: index.$lightgreen
 
-  // Removing Texthighlight
-  /* iOS Safari */
-  -webkit-touch-callout: none
-  /* Safari */
-  -webkit-user-select: none
-  /* Konqueror HTML */
-  -khtml-user-select: none
-  /* Old versions of Firefox */
-  -moz-user-select: none
-  /* Internet Explorer/Edge */
-  -ms-user-select: none
-  /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
-  user-select: none
 
 h2
   writing-mode: vertical-rl
