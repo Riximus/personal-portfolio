@@ -44,13 +44,14 @@ export default {
   @include index.remove-highlight
   height: 100%
 
+// has Icon animation
 #icon-image
   @include index.center-middle
   background-color: index.$lightgreen
   aspect-ratio: 1 / 1
   height: 100%
   border-radius: 50%
-  transition: 300ms ease-out
+  transition: 200ms ease-out
 
   &:hover
     background: index.$green

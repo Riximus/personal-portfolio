@@ -65,42 +65,4 @@ export default {
   align-items: center
   justify-content: center
 
-// Content Enters
-.fade-enter-active
-  transition: all 0.5s ease-in
-
-.fade-enter-from
-  opacity: 0
-
-.fade-enter-to
-  opacity: 1
-
-// Content Leaves
-.fade-leave-active
-  transition: all 0.5s ease-out
-
-.fade-leave-from
-  opacity: 1
-
-.fade-leave-to
-  opacity: 0
-
-// Side Menu Enters
-.grow-enter-active
-  animation: grow-in 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both
-
-// Side Menu Leaves
-.grow-leave-active
-  animation: grow-in 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both reverse
-
-@keyframes grow-in
-  0%
-    transform: scaleX(-1)
-    transform-origin: 0 100%
-
-  100%
-    transform: scaleX(1)
-    transform-origin: 0 100%
-
-
 </style>

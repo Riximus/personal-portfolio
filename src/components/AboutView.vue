@@ -13,7 +13,7 @@
     <!-- Main Body -->
     <div class="content">
       <div class="content-body">
-        <h3>coding languages</h3>
+        <h3>coding skills</h3>
         <div class="icons" style="margin-bottom: 90px">
           <Icon
               class="disable-href"
@@ -65,6 +65,8 @@ export default {
         {id: 2, fileName: 'java', altText: 'Java Icon', description: 'Java'},
         {id: 3, fileName: 'python', altText: 'Python Icon', description: 'Python'},
         {id: 4, fileName: 'c', altText: 'C Icon', description: 'C'},
+        {id: 5, fileName: 'vue', altText: 'Vue Logo', description: 'VueJS'},
+        {id: 6, fileName: 'sass', altText: 'Sass Logo', description: 'Sass'}
       ],
       toolIcons: [
         {id: 1, fileName: 'gitkraken', altText: 'GitKraken Logo', description: 'GitKraken'},
