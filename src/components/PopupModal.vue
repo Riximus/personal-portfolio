@@ -4,8 +4,15 @@
   </Transition>-->
   <Transition name="slide" appear>
     <div class="modal">
-      <h4>Lore Ipsum</h4>
-      <p> HEY :D omg hey</p>
+      <header>
+        <slot name="header">This is a header</slot>
+      </header>
+      <main>
+        <slot></slot>
+      </main>
+      <footer>
+        <slot name="footer">Footer</slot>
+      </footer>
       <button class="button" @click="close">Close</button>
     </div>
   </Transition>
@@ -34,12 +41,9 @@ export default {
   position: fixed
   z-index: 99
   width: 100%
-  max-width: 400px
+  max-width: 600px
   background-color: index.$lightgreen
   color: index.$black
   border: index.$black 4px solid
-  padding: 25px
-
-.hide-element
-  display: none
+  padding: 10px
 </style>

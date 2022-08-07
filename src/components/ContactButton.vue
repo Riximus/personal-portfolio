@@ -1,20 +1,20 @@
 <template>
   <h3 :class="`contact ${className}`" @click="showModal">contact me</h3>
   <KeepAlive>
-    <PopupModal v-show="isModalVisible" @close="closeModal"/>
+    <ContactForm v-show="isModalVisible" @close="closeModal"/>
   </KeepAlive>
   <BlurBackground v-show="isModalVisible" @close="closeModal"/>
 
 </template>
 
 <script>
-import PopupModal from "@/components/PopupModal";
+import ContactForm from "@/components/ContactForm";
 import BlurBackground from "@/components/BlurBackground";
 
 export default {
   name: 'ContactButton',
   components: {
-    PopupModal,
+    ContactForm,
     BlurBackground
   },
   props: {
