@@ -35,7 +35,6 @@ export default {
     ContactButton,
     Socials
   }
-
 }
 </script>
 

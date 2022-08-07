@@ -32,7 +32,6 @@ export default {
       sideMenuClass: 'about-view',
       sideMenuPosition: '0',
       transitionSideMenu: true,
-
     }
   },
   methods: {
