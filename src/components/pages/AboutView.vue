@@ -37,7 +37,7 @@
         </div>
       </div>
       <div id="profile-frame">
-        <img id="profile-frame-image" src="../assets/images/profilepic.jpg" alt="Profile picture of a man"/>
+        <img id="profile-frame-image" src="../../assets/images/profilepic.jpg" alt="Profile picture of a man"/>
       </div>
     </div>
 
@@ -47,9 +47,9 @@
 </template>
 
 <script>
-import Icon from "@/components/Icon";
-import Socials from "@/components/Socials";
-import ContactButton from "@/components/ContactButton";
+import Icon from "@/components/ui/Icon";
+import Socials from "@/components/layout/Socials";
+import ContactButton from "@/components/ui/ContactButton";
 
 export default {
   name: "AboutView",
@@ -79,7 +79,7 @@ export default {
 </script>
 
 <style scoped lang="sass">
-@use "src/assets/styles/_index.sass"
+@use "@/assets/styles/_index.sass"
 
 #about-view
   color: index.$lightgreen

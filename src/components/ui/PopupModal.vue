@@ -30,7 +30,7 @@ export default {
 </script>
 
 <style scoped lang="sass">
-@use "src/assets/styles/index"
+@use "../../assets/styles/index"
 
 .modal
   @include index.center-middle

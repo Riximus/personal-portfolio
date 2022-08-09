@@ -38,7 +38,7 @@ export default {
 </script>
 
 <style scoped lang="sass">
-@use "src/assets/styles/_index.sass"
+@use "@/assets/styles/_index.sass"
 
 #icon-box
   @include index.remove-highlight

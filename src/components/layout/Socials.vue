@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import Icon from "@/components/Icon";
+import Icon from "@/components/ui/Icon";
 
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
@@ -34,7 +34,7 @@ export default {
 </script>
 
 <style scoped lang="sass">
-@use "src/assets/styles/_index.sass"
+@use "@/assets/styles/_index.sass"
 
 .socials
   display: flex

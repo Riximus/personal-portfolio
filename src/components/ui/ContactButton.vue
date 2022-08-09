@@ -8,8 +8,8 @@
 </template>
 
 <script>
-import ContactForm from "@/components/ContactForm";
-import BlurBackground from "@/components/BlurBackground";
+import ContactForm from "@/components/pages/ContactForm";
+import BlurBackground from "@/components/ui/BlurBackground";
 
 export default {
   name: 'ContactButton',
@@ -37,7 +37,7 @@ export default {
 </script>
 
 <style scoped lang="sass">
-@use "src/assets/styles/_index.sass"
+@use "@/assets/styles/_index.sass"
 
 .contact
   @include index.remove-highlight

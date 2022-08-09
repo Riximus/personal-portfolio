@@ -13,9 +13,9 @@
 </template>
 
 <script>
-import SideMenu from "@/components/SideMenu";
-import AboutView from "@/components/AboutView";
-import ProjectView from "@/components/ProjectView";
+import SideMenu from "@/components/layout/SideMenu";
+import AboutView from "@/components/pages/AboutView";
+import ProjectView from "@/components/pages/ProjectView";
 
 export default {
 
