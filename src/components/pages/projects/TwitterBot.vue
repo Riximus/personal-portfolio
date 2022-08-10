@@ -1,6 +1,6 @@
 <template>
   <PopupModal>
-
+    Twitter Bot
   </PopupModal>
 </template>
 

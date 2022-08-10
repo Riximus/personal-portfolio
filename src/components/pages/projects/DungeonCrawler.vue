@@ -1,6 +1,6 @@
 <template>
   <PopupModal>
-
+    Dungeon Crawler
   </PopupModal>
 </template>
 

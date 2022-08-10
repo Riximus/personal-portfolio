@@ -1,6 +1,6 @@
 <template>
   <PopupModal>
-
+    Mensa Scraper
   </PopupModal>
 </template>
 
