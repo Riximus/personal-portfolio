@@ -1,13 +1,18 @@
 <template>
-  <!--<Transition name="fade" appear>
-    <div class="modal-overlay" @click="close"></div>
-  </Transition>-->
   <Transition name="slide" appear>
-    <div class="modal">
+    <div :class="`modal ${className}`">
       <header>
-        <slot name="header">This is a header</slot>
+        <h3>
+          <slot name="header">This is a header</slot>
+        </h3>
       </header>
       <main>
+        <h5>
+          <slot name="technologies-title"></slot>
+        </h5>
+        <div class="technologies">
+          <slot name="technologies"></slot>
+        </div>
         <slot></slot>
       </main>
       <footer>
@@ -25,6 +30,12 @@ export default {
     close() {
       this.$emit('close')
     }
+  },
+  props: {
+    className: {
+      type: String,
+      default: "about-view-modal"
+    }
   }
 }
 </script>
@@ -41,9 +52,21 @@ export default {
   position: fixed
   z-index: 99
   width: 100%
-  max-width: 600px
-  background-color: index.$lightgreen
-  color: index.$black
   border: index.$black 4px solid
+  border-radius: 20px
   padding: 10px
+  
+  &.about-view-modal
+    @include index.modal-style(40em, index.$lightgreen, index.$black)
+
+  &.projects-view-modal
+    @include index.modal-style(40em, index.$lightpurple, index.$black)
+
+  & > main
+    @include index.center-middle
+    flex-direction: column
+
+.technologies
+  display: flex
+
 </style>

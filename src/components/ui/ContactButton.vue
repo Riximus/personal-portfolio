@@ -1,7 +1,7 @@
 <template>
   <h3 :class="`contact ${className}`" @click="showModal">contact me</h3>
   <KeepAlive>
-    <ContactForm v-show="isModalVisible" @close="closeModal"/>
+    <ContactForm v-show="isModalVisible" @close="closeModal" :class-name="`${modalClass}`"/>
   </KeepAlive>
   <BlurBackground v-show="isModalVisible" @close="closeModal"/>
 
@@ -22,12 +22,18 @@ export default {
   },
   data() {
     return {
-      isModalVisible: false
+      isModalVisible: false,
+      modalClass: 'about-view-modal'
     }
   },
   methods: {
     showModal() {
       this.isModalVisible = true
+      if (this.className === 'project') {
+        this.modalClass = 'projects-view-modal'
+      } else if (this.className === 'about') {
+        this.modalClass = 'about-view-modal'
+      }
     },
     closeModal() {
       this.isModalVisible = false

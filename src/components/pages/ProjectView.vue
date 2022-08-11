@@ -16,7 +16,7 @@
            :key="project.id">
         <h2 @click="showModal(project.id)">{{ project.projectName }} <sup>{{ project.projectYear }}</sup></h2>
       </div>
-      <component v-show="isModalVisible" :is="component" @close="closeModal"/>
+      <component v-show="isModalVisible" :is="component" @close="closeModal" class="projects-modal"/>
       <BlurBackground v-show="isModalVisible" @close="closeModal"/>
     </div>
 
@@ -117,4 +117,6 @@ export default {
     &:hover
       color: index.$purple
 
+.projects-modal
+  @include index.modal-style(50em, index.$lightpurple, index.$black)
 </style>
