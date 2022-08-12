@@ -5,6 +5,8 @@ import '@formkit/themes/genesis'
 
 const app = createApp(App)
 
-app.use(plugin, defaultConfig)
+app.use(plugin, defaultConfig({
+    theme: 'genesis'
+}))
 
 app.mount('#app')

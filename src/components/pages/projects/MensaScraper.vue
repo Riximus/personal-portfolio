@@ -1,6 +1,11 @@
 <template>
-  <PopupModal>
-    Mensa Scraper
+  <PopupModal class-name="projects-view-modal">
+    <template #header>
+      Mensa Scraper
+    </template>
+    <template #technologies>
+      <p class="tech-list-spacer" v-for="tech in techs" :key="tech"> {{ tech }}</p>
+    </template>
   </PopupModal>
 </template>
 
@@ -11,6 +16,11 @@ export default {
   name: "MensaScraper",
   components: {
     PopupModal
+  },
+  data() {
+    return {
+      techs: ['Python', 'BeautifulSoup']
+    }
   }
 }
 </script>

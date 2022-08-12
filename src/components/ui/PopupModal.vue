@@ -13,7 +13,7 @@
         <div class="technologies">
           <slot name="technologies"></slot>
         </div>
-        <slot></slot>
+        <slot>Main</slot>
       </main>
       <footer>
         <slot name="footer">Footer</slot>
@@ -55,7 +55,7 @@ export default {
   border: index.$black 4px solid
   border-radius: 20px
   padding: 10px
-  
+
   &.about-view-modal
     @include index.modal-style(40em, index.$lightgreen, index.$black)
 

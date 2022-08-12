@@ -3,9 +3,6 @@
     <template #header>
       Indie Studio Website
     </template>
-    <template #technologies-title>
-      Technologies
-    </template>
     <template #technologies>
       <p class="tech-list-spacer" v-for="tech in techs" :key="tech"> {{ tech }}</p>
     </template>
