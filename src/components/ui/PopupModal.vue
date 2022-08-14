@@ -7,16 +7,16 @@
         </h3>
       </header>
       <main>
-        <h5>
-          <slot name="technologies-title"></slot>
-        </h5>
         <div class="technologies">
           <slot name="technologies"></slot>
         </div>
         <slot>Main</slot>
       </main>
       <footer>
-        <slot name="footer">Footer</slot>
+        <slot name="footer">
+          <slot name="information">
+          </slot>
+        </slot>
       </footer>
       <button class="button" @click="close">Close</button>
     </div>
