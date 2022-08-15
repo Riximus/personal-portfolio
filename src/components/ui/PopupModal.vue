@@ -10,7 +10,9 @@
         <div class="technologies">
           <slot name="technologies"></slot>
         </div>
-        <slot>Main</slot>
+        <p>
+          <slot>Main</slot>
+        </p>
       </main>
       <footer>
         <slot name="footer">

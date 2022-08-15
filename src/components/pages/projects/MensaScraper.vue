@@ -6,6 +6,9 @@
     <template #technologies>
       <p class="tech-list-spacer" v-for="tech in techs" :key="tech"> {{ tech }}</p>
     </template>
+    <template #information>
+      <a href="https://github.com/Riximus/mensa-vegan-scraper">Source Code</a>
+    </template>
   </PopupModal>
 </template>
 
