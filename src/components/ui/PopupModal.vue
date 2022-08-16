@@ -10,9 +10,8 @@
         <div class="technologies">
           <slot name="technologies"></slot>
         </div>
-        <p>
-          <slot>Main</slot>
-        </p>
+        <slot>Main</slot>
+        <slot name="picture"><img :src="picture" :alt="altText"></slot>
       </main>
       <footer>
         <slot name="footer">
@@ -37,7 +36,9 @@ export default {
     className: {
       type: String,
       default: "about-view-modal"
-    }
+    },
+    picture: String,
+    altText: String
   }
 }
 </script>
