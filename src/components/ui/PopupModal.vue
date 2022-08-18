@@ -54,16 +54,15 @@ export default {
   transform: translate(-50%, -50%)
   position: fixed
   z-index: 99
-  width: 100%
   border: index.$black 4px solid
   border-radius: 20px
-  padding: 10px
+  padding: 3em
 
   &.about-view-modal
-    @include index.modal-style(40em, index.$lightgreen, index.$black)
+    @include index.modal-style(60em, index.$lightgreen, index.$black)
 
   &.projects-view-modal
-    @include index.modal-style(40em, index.$lightpurple, index.$black)
+    @include index.modal-style(60em, index.$lightpurple, index.$black)
 
   & > main
     @include index.center-middle
