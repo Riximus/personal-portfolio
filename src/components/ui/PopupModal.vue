@@ -19,7 +19,9 @@
           </slot>
         </slot>
       </footer>
-      <button class="button" @click="close">Close</button>
+      <!--
+      <button class="close-button" @click="close">X</button>
+      -->
     </div>
   </Transition>
 </template>

@@ -1,7 +1,7 @@
 <template>
   <h3 :class="`contact ${className}`" @click="showModal">contact me</h3>
   <KeepAlive>
-    <ContactForm v-show="isModalVisible" @close="closeModal" :class-name="`${modalClass}`"/>
+    <ContactForm v-show="isModalVisible" @close="closeModal" :modal-color-class="`${modalClass}`"/>
   </KeepAlive>
   <BlurBackground v-show="isModalVisible" @close="closeModal"/>
 

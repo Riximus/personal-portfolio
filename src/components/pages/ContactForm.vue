@@ -1,5 +1,5 @@
 <template>
-  <PopupModal id="form-modal" :class-name="`${className}`">
+  <PopupModal id="form-modal" :class-name="`${modalColorClass}`">
     <template #header>
       <h3 class="contact-form-title">Contact Form</h3>
     </template>
@@ -8,7 +8,7 @@
     -->
 
     <!-- Contact Form Body -->
-    <div class="contact-form">
+    <div :class="`contact-form ${modalColorClass}`">
       <Form @submit="submit" :validation-schema="simpleSchema" class="contact-form-body">
 
         <div class="contact-form-body-field">
@@ -58,7 +58,7 @@ export default {
     ErrorMessage
   },
   props: {
-    className: String
+    modalColorClass: String
   },
   data() {
     const simpleSchema = markRaw(object({
@@ -95,20 +95,52 @@ export default {
 
     & > label
       color: index.$black
+      margin-bottom: 0.2em
+
+      &:after
+        content: '*'
+        color: red
 
     & > input
       background-color: index.$white
       height: 2em
+      border-radius: 20px
+      text-align: center
+      border: 2px index.$black solid
+
+    // Error Message
+    & > span
+      display: inline-block
+      text-align: center
+      margin-top: 0.5em
+      height: 1em
+      padding: 0.5em
+      border-radius: 20px
+      color: index.$black
+      background-color: index.$danger
+
+#message
+  resize: none
+  height: 15em
+  border-radius: 20px
+  padding: 1em
+  background-color: index.$white
+  border: 2px index.$black solid
 
 #submit-button
   height: 2em
   margin: 0.5em 0
+  border-radius: 20px
+  cursor: pointer
   background-color: index.$black
   color: index.$white
 
-#message
-  resize: none
-  height: 20em
-  background-color: index.$white
+.about-view-modal #submit-button:hover
+  background-color: index.$green
+  color: index.$black
+
+.projects-view-modal #submit-button:hover
+  background-color: index.$purple
+  color: index.$black
 
 </style>
