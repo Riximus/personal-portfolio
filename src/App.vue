@@ -1,10 +1,8 @@
 <template>
-  <KeepAlive>
-    <Transition name="grow" appear mode="out-in">
-      <SideMenu v-if="transitionSideMenu" :class-name="sideMenuClass" :menu-text=menuText @click="toggle"/>
-      <SideMenu v-else :class-name="sideMenuClass" :menu-text=menuText @click="toggle"/>
-    </Transition>
-  </KeepAlive>
+  <Transition name="grow" appear mode="out-in">
+    <SideMenu v-if="transitionSideMenu" :class-name="sideMenuClass" :menu-text=menuText @click="toggle"/>
+    <SideMenu v-else :class-name="sideMenuClass" :menu-text=menuText @click="toggle"/>
+  </Transition>
   <div class="outer-views">
     <Transition name="fade" appear mode="out-in">
       <component :is="component"/>

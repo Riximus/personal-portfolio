@@ -112,7 +112,7 @@ export default {
     & > span
       display: inline-block
       text-align: center
-      margin-top: 0.5em
+      margin-top: 0.3em
       height: 1em
       padding: 0.5em
       border-radius: 20px
