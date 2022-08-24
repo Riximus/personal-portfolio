@@ -14,7 +14,7 @@
     <div class="content">
       <div class="content-body">
         <h3>coding skills</h3>
-        <div class="icons" style="margin-bottom: 90px">
+        <div class="icons">
           <Icon
               class="disable-href"
               v-for="icon in langIcons"
@@ -40,7 +40,6 @@
         <img id="profile-frame-image" src="../../assets/images/profilepic.jpg" alt="Profile picture of a man"/>
       </div>
     </div>
-
     <!-- Socials -->
     <Socials/>
   </div>
@@ -84,9 +83,11 @@ export default {
 #about-view
   color: index.$lightgreen
 
+.icons:first-of-type
+  margin-bottom: 5.5em
+
 .icons
   display: flex
-  //border: navajowhite solid 1px
   height: index.$big-icon
   margin-top: 25px
   gap: 10px 25px
@@ -95,7 +96,6 @@ export default {
   @include index.remove-highlight
   @include index.responsive-square
   @include index.center-middle
-  //border: white solid 1px
   align-self: center
 
   &-image
