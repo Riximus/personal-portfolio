@@ -19,7 +19,6 @@
       <component v-show="isModalVisible" :is="component" @close="closeModal" class="projects-modal"/>
       <BlurBackground v-show="isModalVisible" @close="closeModal"/>
     </div>
-
     <!-- Socials -->
     <Socials class-name="project"/>
   </div>
