@@ -29,7 +29,7 @@ export default {
       menuText: 'projects',
       sideMenuClass: 'about-view',
       sideMenuPosition: '0',
-      transitionSideMenu: true,
+      transitionSideMenu: '',
     }
   },
   methods: {

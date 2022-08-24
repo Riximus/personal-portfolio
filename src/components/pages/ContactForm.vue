@@ -70,6 +70,12 @@ export default {
     return {
       simpleSchema
     }
+  },
+  methods: {
+    submit() {
+      event.preventDefault()
+      console.log('Form sent')
+    }
   }
 }
 </script>
@@ -102,11 +108,13 @@ export default {
         color: red
 
     & > input
-      background-color: index.$white
       height: 2em
       border-radius: 20px
       text-align: center
-      border: 2px index.$black solid
+      border: 1px index.$black solid
+
+      &:focus
+        outline: 3px index.$black solid
 
     // Error Message
     & > span
@@ -125,7 +133,10 @@ export default {
   border-radius: 20px
   padding: 1em
   background-color: index.$white
-  border: 2px index.$black solid
+  border: 1px index.$black solid
+
+  &:focus
+    outline: 3px index.$black solid
 
 #submit-button
   height: 2em
