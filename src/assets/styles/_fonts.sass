@@ -1,3 +1,6 @@
+@use "medias"
+
+// basic fonts
 // 152 px
 $xxl-font: 9.5rem
 // 100px
@@ -11,6 +14,10 @@ $s-font: 1.5rem
 // 16px
 $xs-font: 1rem
 
+// special media fonts
+// 80px
+$media-l-font: 5rem
+
 h1, h2, h3, h4, h5, h6, p, a, label, input, button, span
   font-family: "Roboto Thin", sans-serif
 
@@ -18,21 +25,41 @@ h1, h2, h3, h4, h5, h6, p, a, label, input, button, span
 h1
   font-size: $xxl-font
 
+@media screen and (max-width: 1735px)
+  h1
+    font-size: $xl-font
+
 // 100
 h2
   font-size: $xl-font
+
+@media screen and (max-width: medias.$smaller-screen)
+  h2
+    font-size: $media-l-font
 
 // 50
 h3
   font-size: $l-font
 
+//@media screen and (max-width: 1735px)
+  h3
+    font-size: $m-font
+
 // 30
 h4
   font-size: $m-font
 
+@media screen and (max-width: medias.$notebook-screen)
+  h4
+    font-size: $s-font
+
 // 25
 h5
   font-size: $s-font
+
+@media screen and (max-width: medias.$notebook-screen)
+  h5
+    font-size: $xs-font
 
 // 15
 p

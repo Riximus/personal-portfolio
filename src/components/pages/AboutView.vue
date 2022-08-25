@@ -89,8 +89,12 @@ export default {
 .icons
   display: flex
   height: index.$big-icon
-  margin-top: 25px
+  margin-top: 1.5em
   gap: 10px 25px
+
+@media screen and (max-width: index.$smaller-screen)
+  .icons
+    height: index.$middle-icon
 
 #profile-frame
   @include index.remove-highlight
