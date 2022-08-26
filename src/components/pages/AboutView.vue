@@ -86,6 +86,10 @@ export default {
 .icons:first-of-type
   margin-bottom: 5.5em
 
+@media screen and (max-height: index.$notebook-screen-height)
+  .icons:first-of-type
+    margin-bottom: 2em
+
 .icons
   display: flex
   height: index.$big-icon
