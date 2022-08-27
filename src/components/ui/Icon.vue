@@ -51,7 +51,6 @@ export default {
   aspect-ratio: 1 / 1
   height: 100%
   border-radius: 50%
-  transition: 200ms ease-out
 
   &:hover
     background: index.$green

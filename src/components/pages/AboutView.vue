@@ -113,4 +113,12 @@ export default {
 @media screen and (max-height: index.$notebook-screen-height)
   .icons:first-of-type
     margin-bottom: 4em
+
+@media screen and (max-width: index.$ipad-screen)
+  .icons
+    height: index.$small-icon
+
+    &:first-of-type
+      margin-bottom: 2.5em
+
 </style>

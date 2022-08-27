@@ -20,10 +20,6 @@
 .title-head > h1
   margin: 0.2em 0 0.2em 0
 
-@media screen and (max-height: medias.$notebook-screen-height)
-  .title-head > h1
-    margin: 0 0 0.1em 0
-
 .underline
   text-decoration: underline
 
@@ -35,10 +31,6 @@
     flex-direction: column
     justify-content: center
     width: 100%
-
-@media screen and (max-width: medias.$notebook-screen)
-  .content
-    margin-top: 3.5em
 
 .disable-href
   pointer-events: none
@@ -57,4 +49,18 @@
 .tech-list-spacer:first-child:before
   content: ""
 
-// Projects Modal Width
+@media screen and (max-height: medias.$notebook-screen-height)
+  .title-head > h1
+    margin: 0 0 0.1em 0
+
+@media screen and (max-width: medias.$notebook-screen)
+  .content
+    margin-top: 3.5em
+
+@media screen and (max-height: medias.$tiny-screen-height)
+  .content
+    margin-top: 2em
+
+@media screen and (max-width: medias.$ipad-screen)
+  .content
+    margin-top: 1.5em

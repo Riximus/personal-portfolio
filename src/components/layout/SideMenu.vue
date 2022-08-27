@@ -27,7 +27,7 @@ export default {
   @include index.center-middle
   background-color: index.$lightpurple
   height: 100vh
-  width: 10em
+  width: 9vw
   cursor: pointer
 
   &.about
@@ -35,7 +35,6 @@ export default {
 
   &.project
     background-color: index.$lightgreen
-
 
 h2
   writing-mode: vertical-rl
@@ -48,5 +47,11 @@ h2
 
 .v-enter-from, .v-leave-to
   opacity: 0
+
+@media screen and (max-width: index.$notebook-screen), screen and (max-height: index.$notebook-screen-height)
+  h2
+    
+
+@media screen and (max-width: index.$tiny-screen), screen and (max-height: index.$tiny-screen-height)
 
 </style>

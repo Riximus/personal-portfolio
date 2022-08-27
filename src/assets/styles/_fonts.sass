@@ -65,9 +65,17 @@ input, textarea
   h1
     font-size: $xl-font
 
+@media screen and (max-width: medias.$small-screen), screen and (max-height: medias.$smaller-screen-height)
+  .side-menu > h2
+    font-size: $media-l-font
+
 @media screen and (max-width: medias.$smaller-screen)
   h2
     font-size: $media-xl-font
+
+@media screen and (max-height: medias.$smaller-screen-height)
+  label
+    font-size: $xs-font
 
 @media screen and (max-width: medias.$tiny-screen)
   h1
@@ -78,3 +86,13 @@ input, textarea
 
   h3
     font-size: $m-font
+
+@media screen and (max-width: medias.$ipad-screen)
+  h1
+    font-size: $media-l-font
+
+  .side-menu > h2
+    font-size: $m-font
+
+  h4
+    font-size: $xs-font

@@ -73,4 +73,7 @@ export default {
 .technologies
   display: flex
 
+@media screen and (max-height: index.$smaller-screen-height)
+  .modal
+    padding: 1em
 </style>

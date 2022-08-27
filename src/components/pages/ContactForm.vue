@@ -154,4 +154,40 @@ export default {
   background-color: index.$purple
   color: index.$black
 
+@media screen and (max-height: index.$smaller-screen-height)
+  .contact-form-body-field
+    > input
+      height: 1.7em
+
+    > span
+      padding: 0.2em
+
+  #message
+    height: 10em
+
+@media screen and (max-height: index.$smaller-screen-height)
+  .contact-form-title
+    font-size: index.$s-font
+
+  .contact-form-body-field
+    > input
+      height: 1.4em
+
+      &:focus
+        outline: 1px index.$black solid
+
+    > span
+      padding: 0.2em
+
+  #message
+    height: 10em
+
+    &:focus
+      outline: 1px index.$black solid
+
+  #submit-button
+    height: 1.5em
+
+  #form-modal
+    padding: 0.2em 1em
 </style>

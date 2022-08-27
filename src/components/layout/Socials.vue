@@ -42,4 +42,8 @@ export default {
   height: index.$small-icon
   gap: 15px
 
+@media screen and (max-height: index.$tiny-screen-height), screen and (max-width: index.$ipad-screen)
+  .socials
+    height: index.$tiny-icon
+
 </style>
