@@ -83,22 +83,14 @@ export default {
 #about-view
   color: index.$lightgreen
 
-.icons:first-of-type
-  margin-bottom: 5.5em
-
-@media screen and (max-height: index.$notebook-screen-height)
-  .icons:first-of-type
-    margin-bottom: 2em
-
 .icons
   display: flex
   height: index.$big-icon
   margin-top: 1.5em
   gap: 10px 25px
 
-@media screen and (max-width: index.$smaller-screen)
-  .icons
-    height: index.$middle-icon
+  &:first-of-type
+    margin-bottom: 5.5em
 
 #profile-frame
   @include index.remove-highlight
@@ -109,4 +101,16 @@ export default {
   &-image
     @include index.responsive-square-content
     border-radius: 50%
+
+@media screen and (max-width: index.$smaller-screen)
+  .icons
+    height: index.$middle-icon
+    margin-top: 1em
+
+    &:first-of-type
+      margin-bottom: 3em
+
+@media screen and (max-height: index.$notebook-screen-height)
+  .icons:first-of-type
+    margin-bottom: 4em
 </style>

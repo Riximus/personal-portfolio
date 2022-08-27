@@ -16,52 +16,27 @@ $xs-font: 1rem
 
 // special media fonts
 // 80px
-$media-l-font: 5rem
+$media-xl-font: 5rem
+$media-l-font: 4rem
 
 h1, h2, h3, h4, h5, h6, p, a, label, input, button, span
   font-family: "Roboto Thin", sans-serif
 
-// 150
 h1
   font-size: $xxl-font
 
-@media screen and (max-width: 1735px)
-  h1
-    font-size: $xl-font
-
-// 100
 h2
   font-size: $xl-font
 
-@media screen and (max-width: medias.$smaller-screen)
-  h2
-    font-size: $media-l-font
-
-// 50
 h3
   font-size: $l-font
 
-//@media screen and (max-width: 1735px)
-  h3
-    font-size: $m-font
-
-// 30
 h4
   font-size: $m-font
 
-@media screen and (max-width: medias.$notebook-screen)
-  h4
-    font-size: $s-font
-
-// 25
 h5
   font-size: $s-font
 
-@media screen and (max-width: medias.$notebook-screen)
-  h5
-    font-size: $xs-font
-
-// 15
 p
   font-size: $xs-font
 
@@ -77,3 +52,29 @@ input, textarea
 #submit-button
   font-size: $s-font
   font-weight: bold
+
+@media screen and (max-width: medias.$notebook-screen)
+  h1
+    font-size: $xl-font
+  h4
+    font-size: $s-font
+  h5
+    font-size: $xs-font
+
+@media screen and (max-height: medias.$notebook-screen-height)
+  h1
+    font-size: $xl-font
+
+@media screen and (max-width: medias.$smaller-screen)
+  h2
+    font-size: $media-xl-font
+
+@media screen and (max-width: medias.$tiny-screen)
+  h1
+    font-size: $media-xl-font
+
+  h2
+    font-size: $media-l-font
+
+  h3
+    font-size: $m-font

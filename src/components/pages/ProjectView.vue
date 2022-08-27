@@ -116,6 +116,10 @@ export default {
     &:hover
       color: index.$purple
 
+@media screen and (min-width: index.$notebook-screen)
+  .content
+    margin-top: 4em
+
 .projects-modal
   @include index.modal-style(50em, index.$lightpurple, index.$black)
 </style>
