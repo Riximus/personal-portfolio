@@ -49,8 +49,7 @@ h2
   opacity: 0
 
 @media screen and (max-width: index.$notebook-screen), screen and (max-height: index.$notebook-screen-height)
-  h2
-    
+
 
 @media screen and (max-width: index.$tiny-screen), screen and (max-height: index.$tiny-screen-height)
 

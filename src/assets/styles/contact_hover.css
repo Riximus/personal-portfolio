@@ -4,6 +4,7 @@
     background: linear-gradient(90deg, #111111 50%, var(--about-c) 0) calc(100% - var(--_p, 0%))/200% 100%,
     linear-gradient(var(--about-c) 0 0) 0% 100%/var(--_p, 0%) 100% no-repeat;
     -webkit-background-clip: text, padding-box;
+    -moz-background-clip: padding;
     transition: 200ms ease-out;
 }
 
@@ -17,6 +18,7 @@
     background: linear-gradient(90deg, #111111 50%, var(--project-c) 0) calc(100% - var(--_p, 0%))/200% 100%,
     linear-gradient(var(--project-c) 0 0) 0% 100%/var(--_p, 0%) 100% no-repeat;
     -webkit-background-clip: text, padding-box;
+    -moz-background-clip: padding;
     transition: 200ms ease-out;
 }
 
