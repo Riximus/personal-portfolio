@@ -42,15 +42,9 @@ h2
   color: index.$black
 
 .v-enter-active, .v-leave-active
-  transition: opacity .5s ease-in-out
-  transition-delay: 0.4s
+  transition: opacity 400ms ease-in-out
+  transition-delay: 400ms
 
 .v-enter-from, .v-leave-to
   opacity: 0
-
-@media screen and (max-width: index.$notebook-screen), screen and (max-height: index.$notebook-screen-height)
-
-
-@media screen and (max-width: index.$tiny-screen), screen and (max-height: index.$tiny-screen-height)
-
 </style>
