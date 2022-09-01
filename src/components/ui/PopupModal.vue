@@ -76,4 +76,8 @@ export default {
 @media screen and (max-height: index.$smaller-screen-height)
   .modal
     padding: 1em
+
+@media screen and (max-height: index.$smaller-screen-height-breakpoint)
+  .modal
+    padding: 1em
 </style>
