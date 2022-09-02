@@ -3,10 +3,13 @@
     <!-- Contact Button -->
     <ContactButton class-name="about"/>
 
+    <!-- Profile Picture here for Mobile -->
+    <ProfilePicture class="mobile"/>
+
     <!-- Title -->
     <div class="title-head">
       <h4>i'm</h4>
-      <h1>vorname nachname</h1>
+      <h1>Ricardo Baptista</h1>
       <h4>a <span class="underline">developer</span> with a curiosity that grows everyday like my houseplants</h4>
     </div>
 
@@ -36,9 +39,8 @@
           />
         </div>
       </div>
-      <div id="profile-frame">
-        <img id="profile-frame-image" src="../../assets/images/profilepic.jpg" alt="Profile picture of a man"/>
-      </div>
+      <!-- Profile Picture here for Desktop -->
+      <ProfilePicture class="desktop"/>
     </div>
     <!-- Socials -->
     <Socials/>
@@ -49,10 +51,12 @@
 import Icon from "@/components/ui/Icon";
 import Socials from "@/components/layout/Socials";
 import ContactButton from "@/components/ui/ContactButton";
+import ProfilePicture from "@/components/ui/ProfilePicture";
 
 export default {
   name: "AboutView",
   components: {
+    ProfilePicture,
     ContactButton,
     Icon,
     Socials
@@ -92,15 +96,8 @@ export default {
   &:first-of-type
     margin-bottom: 5.5em
 
-#profile-frame
-  @include index.remove-highlight
-  @include index.responsive-square
-  @include index.center-middle
-  align-self: center
-
-  &-image
-    @include index.responsive-square-content
-    border-radius: 50%
+.mobile
+  display: none
 
 @media screen and (max-width: index.$smaller-screen)
   .icons
@@ -120,5 +117,13 @@ export default {
 
     &:first-of-type
       margin-bottom: 2.5em
+
+@media screen and (max-width: index.$mobile-screen)
+
+  .desktop
+    display: none
+
+  .mobile
+    display: block
 
 </style>
