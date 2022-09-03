@@ -18,6 +18,7 @@ $xs-font: 1rem
 // 80px
 $media-xl-font: 5rem
 $media-l-font: 4rem
+$media-m-font: 2.5rem
 
 h1, h2, h3, h4, h5, h6, p, a, label, input, button, span
   font-family: "Roboto Thin", sans-serif
@@ -96,3 +97,23 @@ input, textarea
 
   h4
     font-size: $xs-font
+
+@media screen and (max-width: medias.$mobile-screen)
+  h1
+    font-size: $media-m-font
+
+  h2
+    font-size: $m-font
+
+  .side-menu > h2
+    &:after
+      content: ' \276F'
+
+  .content-body
+    &>h2
+      line-height: 3.5
+      &>sup
+        font-size: $xs-font
+
+  h4
+    line-height: 1.5

@@ -1,7 +1,7 @@
 <template>
   <div id="about-view" class="inner-views">
-    <!-- Contact Button -->
-    <ContactButton class-name="about"/>
+    <!-- Contact Button here for Desktop -->
+    <ContactButton class-name="about" class="desktop"/>
 
     <!-- Profile Picture here for Mobile -->
     <ProfilePicture class="mobile"/>
@@ -91,7 +91,7 @@ export default {
   display: flex
   height: index.$big-icon
   margin-top: 1.5em
-  gap: 10px 25px
+  gap: 0.6em 1.5em
 
   &:first-of-type
     margin-bottom: 5.5em
@@ -119,11 +119,19 @@ export default {
       margin-bottom: 2.5em
 
 @media screen and (max-width: index.$mobile-screen)
-
   .desktop
     display: none
 
   .mobile
     display: block
 
+  .icons
+    gap: 2em 1em
+
+@media screen and (max-width: 420px)
+  .icons
+    flex-wrap: wrap
+
+    &:first-of-type
+      margin-bottom: 8em
 </style>
