@@ -66,12 +66,21 @@
     margin-top: 1.5em
 
 // Mobile Responsive Design Changes
-@media screen and (max-width: medias.$mobile-screen)
+@media screen and (max-width: medias.$tablet-screen)
   #app
     flex-direction: column
 
 // Mobile Responsive Design Changes
-@media screen and (max-width: medias.$mobile-screen)
+.mobile
+  display: none
+
+@media screen and (max-width: medias.$tablet-screen)
+  .desktop
+    display: none
+
+  .mobile
+    display: block
+
   #app
     flex-direction: column
 

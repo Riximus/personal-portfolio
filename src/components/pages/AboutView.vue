@@ -1,7 +1,7 @@
 <template>
   <div id="about-view" class="inner-views">
-    <!-- Contact Button here for Desktop -->
-    <ContactButton class-name="about" class="desktop"/>
+    <!-- Contact Button -->
+    <ContactButton class-name="about"/>
 
     <!-- Profile Picture here for Mobile -->
     <ProfilePicture class="mobile"/>
@@ -9,7 +9,7 @@
     <!-- Title -->
     <div class="title-head">
       <h4>i'm</h4>
-      <h1>Ricardo Baptista</h1>
+      <h1>vorname nachname</h1>
       <h4>a <span class="underline">developer</span> with a curiosity that grows everyday like my houseplants</h4>
     </div>
 
@@ -96,9 +96,6 @@ export default {
   &:first-of-type
     margin-bottom: 5.5em
 
-.mobile
-  display: none
-
 @media screen and (max-width: index.$smaller-screen)
   .icons
     height: index.$middle-icon
@@ -118,17 +115,11 @@ export default {
     &:first-of-type
       margin-bottom: 2.5em
 
-@media screen and (max-width: index.$mobile-screen)
-  .desktop
-    display: none
-
-  .mobile
-    display: block
-
+@media screen and (max-width: index.$tablet-screen)
   .icons
     gap: 2em 1em
 
-@media screen and (max-width: 420px)
+@media screen and (max-width: index.$mobile-screen-l)
   .icons
     flex-wrap: wrap
 

@@ -98,7 +98,7 @@ input, textarea
   h4
     font-size: $xs-font
 
-@media screen and (max-width: medias.$mobile-screen)
+@media screen and (max-width: medias.$tablet-screen)
   h1
     font-size: $media-m-font
 
@@ -110,9 +110,10 @@ input, textarea
       content: ' \276F'
 
   .content-body
-    &>h2
+    & > h2
       line-height: 3.5
-      &>sup
+
+      & > sup
         font-size: $xs-font
 
   h4
