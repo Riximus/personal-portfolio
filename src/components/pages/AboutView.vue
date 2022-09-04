@@ -1,7 +1,7 @@
 <template>
   <div id="about-view" class="inner-views">
     <!-- Contact Button -->
-    <ContactButton class-name="about"/>
+    <ContactButton class-name="about" icon-color="rgba(136,255,136,1)"/>
 
     <!-- Profile Picture here for Mobile -->
     <ProfilePicture class="mobile"/>

@@ -1,7 +1,7 @@
 <template>
   <div id="project-view" class="inner-views">
     <!-- Contact Button -->
-    <ContactButton class-name="project"/>
+    <ContactButton class-name="project" icon-color="rgba(255, 136, 255, 1)"/>
 
     <!-- Title -->
     <div class="title-head">
