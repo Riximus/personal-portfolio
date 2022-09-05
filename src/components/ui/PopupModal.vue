@@ -1,6 +1,13 @@
 <template>
   <Transition name="slide" appear>
     <div :class="`modal ${className}`">
+      <div class="close-button mobile" @click="close">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36">
+          <path fill="none" d="M0 0h24v24H0z"/>
+          <path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                fill="rgba(17,17,17,1)"/>
+        </svg>
+      </div>
       <header>
         <h3>
           <slot name="header">This is a header</slot>
@@ -10,7 +17,9 @@
         <div class="technologies">
           <slot name="technologies"></slot>
         </div>
-        <slot>Main</slot>
+        <p class="modal-paragraph">
+          <slot>Main</slot>
+        </p>
         <slot name="picture"><img :src="picture" :alt="altText"></slot>
       </main>
       <footer>
@@ -19,9 +28,6 @@
           </slot>
         </slot>
       </footer>
-      <!--
-      <button class="close-button" @click="close">X</button>
-      -->
     </div>
   </Transition>
 </template>
@@ -73,11 +79,34 @@ export default {
 .technologies
   display: flex
 
+.close-button
+  position: absolute
+  cursor: pointer
+  padding: 1em
+  top: 4em
+  right: 4em
+
 @media screen and (max-height: index.$smaller-screen-height)
   .modal
     padding: 1em
 
+  .close-button
+    top: 1.5em
+    right: 1.5em
+
 @media screen and (max-height: index.$smaller-screen-height-breakpoint)
   .modal
     padding: 1em
+
+  .close-button
+    top: 2em
+    right: 2em
+
+@media screen and (max-width: index.$tablet-screen)
+  .modal
+    width: 100vw
+    height: 100vh
+    border-radius: 0
+    border-width: 0
+
 </style>

@@ -18,10 +18,17 @@ $xs-font: 1rem
 // 80px
 $media-xl-font: 5rem
 $media-l-font: 4rem
+$media-lm-font: 3rem
 $media-m-font: 2.5rem
 
-h1, h2, h3, h4, h5, h6, p, a, label, input, button, span
-  font-family: "Roboto Thin", sans-serif
+h1, h2, h3, h4, h5, h6
+  font-family: "Roboto", sans-serif
+
+p, a, label, input, button, span, li, ul, ol, select, textarea
+  font-family: "JetBrainsMono NF", sans-serif
+
+.modal-paragraph
+  font-family: "Roboto", sans-serif
 
 h1
   font-size: $xxl-font
@@ -95,7 +102,18 @@ input, textarea
   .side-menu > h2
     font-size: $m-font
 
+  h2
+    line-height: 1.5
+
   h4
+    font-size: $xs-font
+
+@media screen and (max-width: medias.$tablet-screen-l)
+  h2
+    font-size: $media-lm-font
+    line-height: 2
+
+  h2 > sup
     font-size: $xs-font
 
 @media screen and (max-width: medias.$tablet-screen)

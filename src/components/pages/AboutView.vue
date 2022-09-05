@@ -9,7 +9,7 @@
     <!-- Title -->
     <div class="title-head">
       <h4>i'm</h4>
-      <h1>vorname nachname</h1>
+      <h1>Ricardo Baptista</h1>
       <h4>a <span class="underline">developer</span> with a curiosity that grows everyday like my houseplants</h4>
     </div>
 

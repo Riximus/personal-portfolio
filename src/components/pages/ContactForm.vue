@@ -72,7 +72,7 @@ export default {
     }
   },
   methods: {
-    submit() {
+    submit(event) {
       event.preventDefault()
       console.log('Form sent')
     }
@@ -153,6 +153,23 @@ export default {
 .projects-view-modal #submit-button:hover
   background-color: index.$purple
   color: index.$black
+
+@media screen and (max-width: index.$tablet-screen)
+  input
+    margin-left: 3em
+    margin-right: 3em
+
+  #message
+    margin-left: 3em
+    margin-right: 3em
+
+  #submit-button
+    margin-left: 3em
+    margin-right: 3em
+
+  span
+    margin-left: 3em
+    margin-right: 3em
 
 @media screen and (max-height: index.$smaller-screen-height)
   .contact-form-body-field

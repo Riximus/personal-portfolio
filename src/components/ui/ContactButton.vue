@@ -20,7 +20,6 @@
     <KeepAlive>
       <ContactForm v-show="isModalVisible" @close="closeModal" :modal-color-class="`${modalClass}`"/>
     </KeepAlive>
-    <!--<BlurBackground v-show="isModalVisible" @close="closeModal"/>-->
   </div>
 </template>
 
