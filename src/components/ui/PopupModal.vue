@@ -76,6 +76,9 @@ export default {
     @include index.center-middle
     flex-direction: column
 
+.modal-paragraph
+  padding: 1em 1.5em
+
 .technologies
   display: flex
 
@@ -102,7 +105,7 @@ export default {
     top: 2em
     right: 2em
 
-@media screen and (max-width: index.$tablet-screen)
+@media screen and (max-width: index.$tablet-screen), screen and (max-height: index.$tiny-screen-height)
   .modal
     width: 100vw
     height: 100vh

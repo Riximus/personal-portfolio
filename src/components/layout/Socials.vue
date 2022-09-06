@@ -40,10 +40,16 @@ export default {
   display: flex
   margin-top: 10px
   height: index.$small-icon
-  gap: 15px
+  gap: 1em
 
 @media screen and (max-height: index.$tiny-screen-height), screen and (max-width: index.$ipad-screen)
   .socials
     height: index.$tiny-icon
 
+@media screen and (max-width: index.$tablet-screen), screen and (max-height: index.$tiny-screen-height)
+  .socials
+    flex-direction: column
+    position: absolute
+    bottom: 6em
+    gap: 1.5em
 </style>
