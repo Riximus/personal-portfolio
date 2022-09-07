@@ -9,7 +9,11 @@
 
     <!-- Contact Form Body -->
     <div :class="`contact-form ${modalColorClass}`">
-      <Form @submit="submit" :validation-schema="simpleSchema" class="contact-form-body">
+      <Form
+          @submit="submit"
+          method="POST"
+          :validation-schema="simpleSchema"
+          class="contact-form-body">
 
         <div class="contact-form-body-field">
           <label for="name"> Your Name </label>
@@ -68,13 +72,31 @@ export default {
       message: string().required().label('Message')
     }))
     return {
-      simpleSchema
+      simpleSchema,
+      email_link: process.env.VUE_APP_FORMSUBMIT_EMAIL_LINK
     }
   },
   methods: {
-    submit(event) {
-      event.preventDefault()
-      console.log('Form sent')
+    submit() {
+      const form = document.querySelector('.contact-form-body')
+      const formData = new FormData(form)
+      const url = 'https://formsubmit.co/el/' + this.email_link
+
+      fetch(url, {
+        method: 'POST',
+        mode: 'no-cors',
+        body: formData,
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        }
+      }).then(response => {
+        console.log(response)
+      }).then(data => {
+        console.log(data)
+      }).catch(error => {
+        console.log(error)
+      })
     }
   }
 }
