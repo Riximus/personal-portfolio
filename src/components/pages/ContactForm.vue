@@ -10,36 +10,43 @@
     <!-- Contact Form Body -->
     <div :class="`contact-form ${modalColorClass}`">
       <Form
-          @submit="submit"
+          @submit="onSubmit"
           method="POST"
           :validation-schema="simpleSchema"
-          class="contact-form-body">
+          class="contact-form-body"
+          id="form-body"
+          v-slot="{isSubmitting}">
+        <input type="hidden" name="_subject" :value="`rixi.dev: ${subjectValue}`"/>
 
         <div class="contact-form-body-field">
           <label for="name"> Your Name </label>
-          <Field id="name" name="name"/>
+          <Field id="name" name="name" v-model.lazy="nameValue"/>
           <ErrorMessage name="name"/>
         </div>
 
         <div class="contact-form-body-field">
           <label for="email"> Email Address </label>
-          <Field id="email" name="email" type="email"/>
+          <Field id="email" name="email" type="email" v-model.lazy="emailValue"/>
           <ErrorMessage name="email"/>
         </div>
 
         <div class="contact-form-body-field">
           <label for="subject"> Subject </label>
-          <Field id="subject" name="subject"/>
+          <Field id="subject" name="subject" v-model.lazy="subjectValue"/>
           <ErrorMessage name="subject"/>
         </div>
 
         <div class="contact-form-body-field">
           <label for="message"> Your Message </label>
-          <Field id="message" name="message" as="textarea" placeholder="Enter your message..."/>
+          <Field id="message" name="message" as="textarea" placeholder="Enter your message..."
+                 v-model.lazy="messageValue"/>
           <ErrorMessage name="message"/>
         </div>
 
-        <button id="submit-button">Submit</button>
+        <button type="submit" id="submit-button" :disabled="isSubmitting">
+          <span v-show="isSubmitting">The form is sending</span>
+          Submit
+        </button>
       </Form>
     </div>
     <!-- Contact Form Body END -->
@@ -73,30 +80,32 @@ export default {
     }))
     return {
       simpleSchema,
-      email_link: process.env.VUE_APP_FORMSUBMIT_EMAIL_LINK
+      email_string: process.env.VUE_APP_FORMSUBMIT_EMAIL_STRING,
+      nameValue: '',
+      emailValue: '',
+      subjectValue: '',
+      messageValue: ''
     }
   },
   methods: {
-    submit() {
-      const form = document.querySelector('.contact-form-body')
-      const formData = new FormData(form)
-      const url = 'https://formsubmit.co/el/' + this.email_link
-
-      fetch(url, {
-        method: 'POST',
-        mode: 'no-cors',
-        body: formData,
+    onSubmit() {
+      fetch("https://formsubmit.co/ajax/" + this.email_string, {
+        method: "POST",
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json'
-        }
-      }).then(response => {
-        console.log(response)
-      }).then(data => {
-        console.log(data)
-      }).catch(error => {
-        console.log(error)
+        },
+        body: JSON.stringify({
+          name: this.nameValue,
+          email: this.emailValue,
+          subject: this.subjectValue,
+          message: this.messageValue
+        })
       })
+          .then(response => response.json())
+          .then(data => console.log(data))
+          .catch(error => console.log(error));
+      //:action="`https://formsubmit.co/${email_string}`"
     }
   }
 }
