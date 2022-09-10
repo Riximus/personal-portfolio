@@ -12,6 +12,7 @@
       <Form
           @submit="onSubmit"
           method="POST"
+          action="?"
           :validation-schema="simpleSchema"
           class="contact-form-body"
           id="form-body"
@@ -42,7 +43,8 @@
                  v-model.lazy="messageValue"/>
           <ErrorMessage name="message"/>
         </div>
-
+        <!-- Submit Button -->
+        <div class="g-recaptcha" :data-sitekey=captcha_site_key></div>
         <button type="submit" id="submit-button" :disabled="isSubmitting">
           <span v-show="isSubmitting">The form is sending</span>
           Submit
@@ -81,6 +83,7 @@ export default {
     return {
       simpleSchema,
       email_string: process.env.VUE_APP_FORMSUBMIT_EMAIL_STRING,
+      captcha_site_key: process.env.VUE_APP_CAPTCHA_SITE_KEY,
       nameValue: '',
       emailValue: '',
       subjectValue: '',
@@ -99,7 +102,8 @@ export default {
           name: this.nameValue,
           email: this.emailValue,
           subject: this.subjectValue,
-          message: this.messageValue
+          message: this.messageValue,
+          _subject: this.subjectValue
         })
       })
           .then(response => response.json())
