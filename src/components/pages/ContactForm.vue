@@ -9,14 +9,13 @@
 
     <!-- Contact Form Body -->
     <div :class="`contact-form ${modalColorClass}`">
+      <!--@submit="onSubmit"-->
       <Form
-          @submit="onSubmit"
           method="POST"
-          action="?"
+          :action="`https://formsubmit.co/${this.email_string}`"
           :validation-schema="simpleSchema"
           class="contact-form-body"
-          id="form-body"
-          v-slot="{isSubmitting}">
+          id="form-body">
         <input type="hidden" name="_subject" :value="`rixi.dev: ${subjectValue}`"/>
 
         <div class="contact-form-body-field">
@@ -44,10 +43,9 @@
           <ErrorMessage name="message"/>
         </div>
         <!-- Submit Button -->
-        <div class="g-recaptcha" :data-sitekey=captcha_site_key></div>
-        <button type="submit" id="submit-button" :disabled="isSubmitting">
-          <span v-show="isSubmitting">The form is sending</span>
-          Submit
+        <button type="submit" id="submit-button" @click="submit">
+          <span v-if="isSubmitting">The form is sending</span>
+          <span v-else>Submit</span>
         </button>
       </Form>
     </div>
@@ -87,11 +85,26 @@ export default {
       nameValue: '',
       emailValue: '',
       subjectValue: '',
-      messageValue: ''
+      messageValue: '',
+      isSubmitting: false
     }
   },
   methods: {
-    onSubmit() {
+    submit() {
+      this.isSubmitting = true
+
+      this.simpleSchema.validate({abortEarly: false})
+          .then(function (value) {
+                console.log("hello worked?")
+                console.log(value)
+              }
+          )
+          .catch(function (e) {
+            console.log(e)
+            console.log("hello error")
+          })
+
+      /*
       fetch("https://formsubmit.co/ajax/" + this.email_string, {
         method: "POST",
         headers: {
@@ -103,13 +116,13 @@ export default {
           email: this.emailValue,
           subject: this.subjectValue,
           message: this.messageValue,
-          _subject: this.subjectValue
+          _subject: 'rixi.dev: ' + this.subjectValue
         })
       })
           .then(response => response.json())
           .then(data => console.log(data))
           .catch(error => console.log(error));
-      //:action="`https://formsubmit.co/${email_string}`"
+      //:action="`https://formsubmit.co/${email_string}`"*/
     }
   }
 }
