@@ -91,14 +91,18 @@ export default {
   },
   methods: {
     submit() {
-      this.isSubmitting = true
-
-      this.simpleSchema.validate({abortEarly: false})
-          .then(function (value) {
-                console.log("hello worked?")
-                console.log(value)
-              }
-          )
+      this.simpleSchema
+          .isValid({
+            name: this.nameValue,
+            email: this.emailValue,
+            subject: this.subjectValue,
+            message: this.messageValue,
+            _subject: 'rixi.dev: ' + this.subjectValue
+          })
+          .then(function (valid) {
+            console.log(valid)
+            this.isSubmitting = valid
+          })
           .catch(function (e) {
             console.log(e)
             console.log("hello error")
