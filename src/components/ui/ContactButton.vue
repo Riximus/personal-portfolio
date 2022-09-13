@@ -3,9 +3,6 @@
     <h3 :class="`contact ${className}`" @click="showModal">
       contact me
     </h3>
-    <KeepAlive>
-      <ContactForm v-show="isModalVisible" @close="closeModal" :modal-color-class="`${modalClass}`"/>
-    </KeepAlive>
     <BlurBackground v-show="isModalVisible" @close="closeModal"/>
   </div>
   <div class="contact-button mobile">
@@ -17,10 +14,10 @@
             :fill="iconColor"/>
       </svg>
     </h3>
-    <KeepAlive>
-      <ContactForm v-show="isModalVisible" @close="closeModal" :modal-color-class="`${modalClass}`"/>
-    </KeepAlive>
   </div>
+  <KeepAlive>
+    <ContactForm v-show="isModalVisible" @close="closeModal" :modal-color-class="`${modalClass}`"/>
+  </KeepAlive>
 </template>
 
 <script>
