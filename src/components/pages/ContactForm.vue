@@ -43,8 +43,10 @@
           <ErrorMessage name="message"/>
         </div>
         <!-- Submit Button -->
-        <button type="submit" id="submit-button" @click="submit">
-          <span v-if="isSubmitting">The form is sending</span>
+        <button type="submit" id="submit-button" @click="submit" :disabled="isSubmitting">
+          <div v-if="isSubmitting">
+            <div class="loader"></div>
+            <span>The form is sending</span></div>
           <span v-else>Submit</span>
         </button>
       </Form>
@@ -81,11 +83,10 @@ export default {
     return {
       simpleSchema,
       email_string: process.env.VUE_APP_FORMSUBMIT_EMAIL_STRING,
-      captcha_site_key: process.env.VUE_APP_CAPTCHA_SITE_KEY,
-      nameValue: '',
-      emailValue: '',
-      subjectValue: '',
-      messageValue: '',
+      nameValue: 'dsfd',
+      emailValue: 'fdsf@fsd.c',
+      subjectValue: 'dasd',
+      messageValue: 'asdas',
       isSubmitting: false
     }
   },
@@ -107,26 +108,6 @@ export default {
             console.log(e)
             console.log("hello error")
           })
-
-      /*
-      fetch("https://formsubmit.co/ajax/" + this.email_string, {
-        method: "POST",
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify({
-          name: this.nameValue,
-          email: this.emailValue,
-          subject: this.subjectValue,
-          message: this.messageValue,
-          _subject: 'rixi.dev: ' + this.subjectValue
-        })
-      })
-          .then(response => response.json())
-          .then(data => console.log(data))
-          .catch(error => console.log(error));
-      //:action="`https://formsubmit.co/${email_string}`"*/
     }
   }
 }
