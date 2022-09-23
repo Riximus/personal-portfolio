@@ -44,9 +44,7 @@
         </div>
         <!-- Submit Button -->
         <button type="submit" id="submit-button" @click="submit" :disabled="isSubmitting">
-          <div v-if="isSubmitting">
-            <div class="loader"></div>
-            <span>The form is sending</span></div>
+          <div v-if="isSubmitting" class="loader"></div>
           <span v-else>Submit</span>
         </button>
       </Form>
