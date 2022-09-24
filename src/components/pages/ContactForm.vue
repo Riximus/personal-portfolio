@@ -15,7 +15,8 @@
           :action="`https://formsubmit.co/${this.email_string}`"
           :validation-schema="simpleSchema"
           class="contact-form-body"
-          id="form-body">
+          id="form-body"
+          v-slot="{meta}">
         <input type="hidden" name="_subject" :value="`rixi.dev: ${subjectValue}`"/>
 
         <div class="contact-form-body-field">
@@ -43,9 +44,11 @@
           <ErrorMessage name="message"/>
         </div>
         <!-- Submit Button -->
-        <button type="submit" id="submit-button" @click="submit" :disabled="isSubmitting">
-          <div v-if="isSubmitting" class="loader"></div>
-          <span v-else>Submit</span>
+
+        <div v-if="isSubmitting" class="loader"></div>
+        <button v-else type="submit" id="submit-button" name="submit"
+                @click=" submit; meta.valid && meta.dirty ? isSubmitting = true: isSubmitting = false">
+          Submit
         </button>
       </Form>
     </div>
@@ -98,13 +101,11 @@ export default {
             message: this.messageValue,
             _subject: 'rixi.dev: ' + this.subjectValue
           })
-          .then(function (valid) {
-            console.log(valid)
-            this.isSubmitting = valid
+          .then(function (isValid) {
+            console.log(isValid)
           })
           .catch(function (e) {
             console.log(e)
-            console.log("hello error")
           })
     }
   }
