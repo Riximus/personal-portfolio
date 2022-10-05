@@ -18,7 +18,7 @@
           <slot name="technologies"></slot>
         </div>
         <p class="modal-paragraph">
-          <slot>Main</slot>
+          <slot>🚧Text work in progress🚧</slot>
         </p>
         <slot name="picture"><img :src="picture" :alt="altText"></slot>
       </main>
@@ -111,5 +111,4 @@ export default {
     height: 100vh
     border-radius: 0
     border-width: 0
-
 </style>

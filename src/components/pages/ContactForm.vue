@@ -6,17 +6,14 @@
     <!--
     Name, Email, Subject, Message
     -->
-
     <!-- Contact Form Body -->
     <div :class="`contact-form ${modalColorClass}`">
-      <!--@submit="onSubmit"-->
       <Form
           method="POST"
           :action="`https://formsubmit.co/${this.email_string}`"
           :validation-schema="simpleSchema"
           class="contact-form-body"
-          id="form-body"
-          v-slot="{meta}">
+          id="form-body">
         <input type="hidden" name="_subject" :value="`rixi.dev: ${subjectValue}`"/>
 
         <div class="contact-form-body-field">
@@ -44,12 +41,11 @@
           <ErrorMessage name="message"/>
         </div>
         <!-- Submit Button -->
-
-        <div v-if="isSubmitting" class="loader"></div>
-        <button v-else type="submit" id="submit-button" name="submit"
-                @click=" submit; meta.valid && meta.dirty ? isSubmitting = true: isSubmitting = false">
+        <button type="submit" id="submit-button" @click="submit">
+          <div v-show="isSubmitting" class="loader"></div>
           Submit
         </button>
+
       </Form>
     </div>
     <!-- Contact Form Body END -->
@@ -84,28 +80,22 @@ export default {
     return {
       simpleSchema,
       email_string: process.env.VUE_APP_FORMSUBMIT_EMAIL_STRING,
-      nameValue: 'dsfd',
-      emailValue: 'fdsf@fsd.c',
-      subjectValue: 'dasd',
-      messageValue: 'asdas',
+      nameValue: '',
+      emailValue: '',
+      subjectValue: '',
+      messageValue: '',
       isSubmitting: false
     }
   },
   methods: {
-    submit() {
-      this.simpleSchema
+    async submit() {
+      this.isSubmitting = await this.simpleSchema
           .isValid({
             name: this.nameValue,
             email: this.emailValue,
             subject: this.subjectValue,
             message: this.messageValue,
             _subject: 'rixi.dev: ' + this.subjectValue
-          })
-          .then(function (isValid) {
-            console.log(isValid)
-          })
-          .catch(function (e) {
-            console.log(e)
           })
     }
   }

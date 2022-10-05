@@ -25,7 +25,7 @@ export default {
   data: function () {
     return {
       socialIcons: [
-        {id: 1, fileName: 'twitter', altText: 'Twitter Logo', url: 'https://twitter.com/RixiPixel'},
+        //{id: 1, fileName: 'twitter', altText: 'Twitter Logo', url: 'https://twitter.com/RixiPixel'},
         {id: 2, fileName: 'github', altText: 'Github Logo', url: 'https://github.com/Riximus'}
       ]
     }

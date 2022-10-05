@@ -17,7 +17,7 @@
     After everything is done the bot quote-retweets the three most liked tweets in order
     and the statistics at the end.
     <template #information>
-      <a href="https://github.com/Riximus/bestof-twt-bot">Source Code</a>
+      <a href="https://github.com/Riximus/bestof-twt-bot" target="_blank">Source Code</a>
     </template>
   </PopupModal>
 </template>
