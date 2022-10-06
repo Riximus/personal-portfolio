@@ -7,8 +7,6 @@
     <Transition name="fade" appear mode="out-in">
       <component :is="component"/>
     </Transition>
-    <!-- TODO correct wrong color being displayed -->
-    <p :class="`copyright ${copyrightColor}`">&#169; 2022 - {{ new Date().getFullYear() }} by Ricardo Baptista</p>
   </div>
 </template>
 
@@ -31,8 +29,7 @@ export default {
       menuText: 'projects',
       sideMenuClass: 'about-view',
       sideMenuPosition: '0',
-      transitionSideMenu: '',
-      copyrightColor: 'about'
+      transitionSideMenu: ''
     }
   },
   methods: {
@@ -42,13 +39,11 @@ export default {
         this.menuText = 'about me'
         this.sideMenuClass = 'project'
         this.transitionSideMenu = true
-        this.copyrightColor = 'about'
       } else {
         this.component = 'about-view'
         this.menuText = 'projects'
         this.sideMenuClass = 'about'
         this.transitionSideMenu = false
-        this.copyrightColor = 'projects'
       }
     }
   }
@@ -67,10 +62,5 @@ export default {
   align-items: center
   justify-content: center
 
-.copyright
-  &.about
-    color: index.$lightgreen
-  &.projects
-    color: index.$lightpurple
 
 </style>
