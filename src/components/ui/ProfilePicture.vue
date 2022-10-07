@@ -21,4 +21,6 @@ export default {
   &-image
     @include index.responsive-square-content
     border-radius: 50%
+    object-fit: cover
+
 </style>
