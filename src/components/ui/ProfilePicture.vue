@@ -1,6 +1,13 @@
 <template>
   <div id="profile-frame">
-    <img id="profile-frame-image" src="../../assets/images/profilepic.jpg" alt="Profile picture of a man"/>
+    <img id="profile-frame-image" src="../../assets/images/profilepic_.jpg"
+         srcset="
+         ../../assets/images/profilepic_.jpg 1254w,
+         ../../assets/images/profilepic_755_.jpg 755w,
+         ../../assets/images/profilepic_627_.jpg 627w,
+         ../../assets/images/profilepic_320_.jpg 320w"
+         sizes="50vw"
+         alt="Profile picture of me" height="836" width="1254"/>
   </div>
 </template>
 

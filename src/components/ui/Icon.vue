@@ -1,7 +1,7 @@
 <template>
   <div id="icon-box">
     <a :href=url target="_blank">
-      <div id="icon-image" :class=className><img :src="getImgUrl(fileName)" :alt="`${altText}`"></div>
+      <div id="icon-image" :class=className><img loading="lazy" :src="getImgUrl(fileName)" :alt="`${altText}`"></div>
     </a>
     <p class="description">{{ description }}</p>
   </div>

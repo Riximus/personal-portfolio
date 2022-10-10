@@ -42,7 +42,7 @@
         </div>
         <!-- Submit Button -->
         <button type="submit" id="submit-button" @click="submit">
-          <div v-show="isSubmitting" class="loader"></div>
+          <div v-if="isSubmitting" class="loader"></div>
           Submit
         </button>
 
