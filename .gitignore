@@ -21,5 +21,6 @@ pnpm-debug.log*
 *.njsproj
 *.sln
 *.sw?
-/src/assets/images/
+/src/assets/images/icons/*
+/src/assets/images/pictures/*
 BackupFiles

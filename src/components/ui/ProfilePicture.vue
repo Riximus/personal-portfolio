@@ -1,13 +1,13 @@
 <template>
   <div id="profile-frame">
-    <img id="profile-frame-image" src="../../assets/images/profilepic_.jpg" fetchpriority="high"
+    <img id="profile-frame-image" src="../../assets/images/pictures/profilepic_.jpg" fetchpriority="high"
          srcset="
-         ../../assets/images/profilepic_.jpg 1254w,
-         ../../assets/images/profilepic_1003_.jpg 1003w,
-         ../../assets/images/profilepic_752_.jpg 752w,
-         ../../assets/images/profilepic_502_.jpg 502w,
-         ../../assets/images/profilepic_251_.jpg 251w"
-         sizes="55vw"
+         ../../assets/images/pictures/profilepic_.jpg 1254w,
+         ../../assets/images/pictures/profilepic_1003_.jpg 1003w,
+         ../../assets/images/pictures/profilepic_752_.jpg 752w,
+         ../../assets/images/pictures/profilepic_502_.jpg 502w,
+         ../../assets/images/pictures/profilepic_251_.jpg 251w"
+         sizes="(min-width:801px) 50vw, 70vw"
          alt="Profile picture of me"/>
   </div>
 </template>
