@@ -1,6 +1,7 @@
 {
   "name": "personal-portfolio",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "author": "Ricardo Baptista (https://github.com/Riximus)",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
