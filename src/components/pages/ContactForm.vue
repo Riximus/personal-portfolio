@@ -79,7 +79,7 @@ export default {
     }))
     return {
       simpleSchema,
-      email_string: process.env.VUE_APP_FORMSUBMIT_EMAIL_STRING,
+      email_string: process.env.VUE_APP_FORMSUBMIT_EMAIL_STRING_PROD,
       nameValue: '',
       emailValue: '',
       subjectValue: '',
