@@ -46,6 +46,8 @@
           Submit
         </button>
 
+        <p>or contact me here: hello@rixi.dev</p>
+
       </Form>
     </div>
     <!-- Contact Form Body END -->
