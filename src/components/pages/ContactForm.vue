@@ -14,7 +14,7 @@
           :validation-schema="simpleSchema"
           class="contact-form-body"
           id="form-body">
-        <input type="hidden" name="_subject" :value="`rixi.dev: ${subjectValue}`"/>
+        <input type="hidden" name="_subject" :value="`RIXI.DEV CONTACT FORM: ${subjectValue}`"/>
 
         <div class="contact-form-body-field">
           <label for="name"> Your Name </label>
